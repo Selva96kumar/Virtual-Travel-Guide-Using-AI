@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner</title>
+    <style>
+        body {
+            background-image: url('https://watermark.lovepik.com/photo/20211208/large/lovepik-summer-travel-background-picture_501594381.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 70%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Increased brightness */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #e4e812;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VIRTUAL TRAVEL GUIDE</h1>
+        <form action="/" method="POST">
+            <label for="destination">Enter Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="days">Number of Days:</label>
+            <input type="number" id="days" name="days" min="1" required>
+
+            <label for="style">Travel Style:</label>
+            <select id="style" name="style">
+                <option value="select">select</option>
+                <option value="Family oriented">Family oriented</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Romantic">Romantic</option>
+                <option value="Solo">Solo</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Relaxation">Relaxation</option>
+            </select>
+
+            <input type="submit" value="Plan My Trip">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary</title>
+    <style>
+        body {
+            background-image: url('https://e1.pxfuel.com/desktop-wallpaper/995/993/desktop-wallpaper-beautiful-travel-graphy-travel.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 70%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Increased brightness */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin: 0;
+            color: #333;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container a {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button-container a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Travel Itinerary for {{ destination }}</h1>
+        <p>Travel Style: {{ style }}</p>
+
+        {% for day in range(days) %}
+            <h2>Day {{ day + 1 }}</h2>
+            <ul>
+                {% for place in daily_itinerary[day] %}
+                    <li>
+                        <h3>{{ place['name'] if place.get('name') else 'No Name Available' }}</h3>
+                        <a href="https://www.openstreetmap.org/?mlat={{ place['lat'] }}&mlon={{ place['lon'] }}" target="_blank">View on Map</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        
+        <div class="button-container">
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
